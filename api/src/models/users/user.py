@@ -1,11 +1,11 @@
 import uuid
 
-from src.common.database import Database
-import src.models.users.errors as UserErrors
-from src.common.util import Utils
-import src.models.users.constants as UserConstants
-import src.models.portfolios.constants as PortfolioConstants
-from src.models.portfolios.portfolio import Portfolio
+from api.src.common.database import Database
+import api.src.models.users.errors as UserErrors
+from api.src.common.util import Utils
+import api.src.models.users.constants as UserConstants
+import api.src.models.portfolios.constants as PortfolioConstants
+from api.src.models.portfolios.portfolio import Portfolio
 
 
 class User(object):

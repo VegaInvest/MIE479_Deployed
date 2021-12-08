@@ -1,12 +1,12 @@
-from src.models.stocks.views import stock_blueprint
-from src.models.portfolios.views import portfolio_blueprint
-from src.models.users.views import user_blueprint
+from api.src.models.stocks.views import stock_blueprint
+from api.src.models.portfolios.views import portfolio_blueprint
+from api.src.models.users.views import user_blueprint
 from flask import Flask, render_template, send_from_directory, request, jsonify
-from src.common.database import Database
-from src.models.stocks.stock import Stock
-from src.models.portfolios.portfolio import Portfolio
-import src.models.portfolios.constants as PortfolioConstants
-import src.models.stocks.constants as StockConstants
+from api.src.common.database import Database
+from api.src.models.stocks.stock import Stock
+from api.src.models.portfolios.portfolio import Portfolio
+import api.src.models.portfolios.constants as PortfolioConstants
+import api.src.models.stocks.constants as StockConstants
 from flask_restful import Api, Resource, reqparse
 from flask_cors import CORS  # comment this on deployment
 import datetime
@@ -16,7 +16,7 @@ import webbrowser
 
 # Initialize Flask app
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
-app.config.from_pyfile("config.py")
+#app.config.from_pyfile("config.py")
 # app.config.from_object('config')
 app.secret_key = "123"
 #CORS(app)  # comment this on deployment

@@ -2,9 +2,9 @@ import uuid
 import yfinance as yf
 
 # from models.stocks.constants import COLLAPSE
-from src.common.database import Database
-import src.models.stocks.constants as StockConstants
-import src.models.stocks.errors as StockErrors
+from api.src.common.database import Database
+import api.src.models.stocks.constants as StockConstants
+import api.src.models.stocks.errors as StockErrors
 from alpha_vantage.timeseries import TimeSeries
 import time
 import datetime

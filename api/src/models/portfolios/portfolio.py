@@ -11,10 +11,10 @@ from sklearn import linear_model
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from pandas.core.indexes import datetimes
-from src.models.portfolios.constants import START_DATE
-from src.models.stocks.stock import Stock
-import src.models.portfolios.constants as PortfolioConstants
-from src.common.database import Database
+from api.src.models.portfolios.constants import START_DATE
+from api.src.models.stocks.stock import Stock
+import api.src.models.portfolios.constants as PortfolioConstants
+from api.src.common.database import Database
 import cvxpy as cvx
 import datetime
 import uuid
