@@ -28,7 +28,7 @@ const Dashboard = () => {
       })
   }, [])
 /* computing the return */
-const rtotal=getMessage.lastportval/getMessage.amount_invested;
+const rtotal=(getMessage.lastportval/getMessage.amount_invested -1)*100 ;
   
 
   return(
@@ -58,19 +58,19 @@ const rtotal=getMessage.lastportval/getMessage.amount_invested;
       <td> {getMessage.amount_invested} </td> 
       </tr>
       <tr> 
-      <td> Total Return </td>
+      <td> Total Return % </td>
       <td>  {rtotal} </td> 
       </tr>
     <tr>
-      <td> Annualized Return </td>
+      <td> Annualized Return % </td>
       <td> {getMessage.returns} </td>
     </tr>
     <tr>
-      <td> Annualized Volatility </td>
+      <td> Annualized Volatility % </td>
       <td> {getMessage.vol} </td>
     </tr>
      <tr>
-      <td> Annualized Sharpe Ratio </td>
+      <td> Annualized Sharpe Ratio % </td>
       <td> {getMessage.sharpe} </td>
     </tr>
   </tbody>
