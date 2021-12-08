@@ -186,8 +186,7 @@ def pushWeights(email):
         return jsonify(
             {
                 "Status": "Success",
-                "weights": weights,
-                "date_vector": date_vector
+                "weights": weights
             }
         )
     return jsonify({"Status": "error use POST request"})

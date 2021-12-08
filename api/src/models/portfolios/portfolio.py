@@ -192,6 +192,8 @@ class Portfolio(object):
                 weights = weights + \
                     [np.array(Portfolio.multi_period_mvo(
                         rbt_mu, Q, forecast_window, gamma_trans, gamma_risk))]
+        
+        print(weights)
 
         weights = np.array(weights).reshape(
             height*forecast_window, len(tickers))
