@@ -179,8 +179,8 @@ class Portfolio(object):
                 excess_ret):])[i*forecast_window:i*forecast_window+lookback], lookback=7, forecast=forecast_window, model=estimation_model)
             mu = params[0].transpose()
             Q = params[1]
-            print("This is cov matrix :", Q)
-            print("This is returns :", mu)
+            # print("This is cov matrix :", Q)
+            # print("This is returns :", mu)
             rbt_mu = Portfolio.robust_mu(mu, Q, alpha, forecast_window)
             if risk_appetite == 'high':
                 weights = weights + \
