@@ -143,6 +143,7 @@ def create_portfolio():  # Views form to create portfolio associated with active
             # fig.savefig(img)
             # img.seek(0)
             # plot_data = base64.b64encode(img.read()).decode()
+            print({"Status": "portfolio created!"})
             return jsonify({"Status": "portfolio created!"})
     return jsonify({"Status": "error use POST request"})
 

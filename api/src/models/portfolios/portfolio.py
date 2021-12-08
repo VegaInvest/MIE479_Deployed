@@ -380,7 +380,7 @@ class Portfolio(object):
         horizon = float(horizon)
         end = int(relativedelta(last_updated, start).years)
         outs = Portfolio.multi_period_backtesting(PortfolioConstants.TICKERS, forecast_window=4, lookback=7, estimation_model=linear_model.SGDRegressor(
-            random_state=42, max_iter=5000), alpha=.1, gamma_trans=.1, gamma_risk=10000, date=Portfolio.to_integer(start), end=end*12, risk_appetite=risk_appetite)
+            random_state=42, max_iter=5000), alpha=.1, gamma_trans=.1, gamma_risk=100000, date=Portfolio.to_integer(start), end=end*12, risk_appetite=risk_appetite)
         curr_weights = outs[0][-1]
         ann_returns = outs[1][1]
         ann_vol = outs[1][2]
@@ -810,7 +810,6 @@ class Portfolio(object):
             return False
 
     def save_to_mongo(self):
-        print("saved")
         Database.update(PortfolioConstants.COLLECTION,
                         {"_id": self._id}, self.json())
 
