@@ -19,7 +19,7 @@ app = Flask(__name__, static_folder="frontend/build")
 app.config.from_pyfile("config.py")
 # app.config.from_object('config')
 app.secret_key = "123"
-CORS(app)  # comment this on deployment
+#CORS(app)  # comment this on deployment
 api = Api(app)
 
 # Initialize Database before running any other command
