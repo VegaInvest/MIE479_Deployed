@@ -66,3 +66,7 @@ def home():
 app.register_blueprint(user_blueprint, url_prefix="/users")
 app.register_blueprint(portfolio_blueprint, url_prefix="/portfolios")
 app.register_blueprint(stock_blueprint, url_prefix="/stocks")
+
+
+if __name__ == "__main__":
+    app.run()
