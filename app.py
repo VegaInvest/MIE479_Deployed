@@ -14,7 +14,6 @@ import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 import webbrowser
 import os
-from rq import Queue
 from worker import conn
 
 #worker file
