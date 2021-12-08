@@ -33,7 +33,6 @@ from sklearn import metrics
 from scipy import stats
 from rq import Queue
 from worker import conn
-from app import q
 
 
 portfolio_blueprint = Blueprint("portfolios", __name__)
@@ -133,12 +132,8 @@ def create_portfolio():  # Views form to create portfolio associated with active
         else:
             # start = datetime.datetime.now() actual
             start = datetime.datetime(2018, 1, 2)  # for simulation
-
-            from api.src.models.portfolios.portfolio import run_backtest
-
-            port = q.enqueue_call(func=run_backtest,args=(amount_invest, goal, horizon, email, risk_appetite, start, PortfolioConstants.END_DATE))
-            # port = Portfolio.run_backtest(amount_invest=amount_invest, goal=goal, horizon=horizon,
-            #                               email=email, risk_appetite=risk_appetite, start=start, last_updated=PortfolioConstants.END_DATE)
+            port = Portfolio.run_backtest(amount_invest=amount_invest, goal=goal, horizon=horizon,
+                                          email=email, risk_appetite=risk_appetite, start=start, last_updated=PortfolioConstants.END_DATE)
             port.save_to_mongo()
             # X[1][1] is annualized returns
             #X[1][2] is vol
@@ -222,11 +217,8 @@ def pushParams(email):
             PortfolioConstants.END_DATE, last_updated).months)
 
         if time_diff_update > 1:
-            from api.src.models.portfolios.portfolio import run_backtest
-
-            port = q.enqueue_call(func=run_backtest,args=(amount_invest, goal, horizon, email, risk_appetite, start, PortfolioConstants.END_DATE))
-            # port = Portfolio.run_backtest(amount_invest=amount_invest, goal=goal, horizon=horizon,
-            #                               email=email, risk_appetite=risk_appetite, start=start)
+            port = Portfolio.run_backtest(amount_invest=amount_invest, goal=goal, horizon=horizon,
+                                          email=email, risk_appetite=risk_appetite, start=start)
             port.save_to_mongo()
             port_data = Database.find_one(
                 PortfolioConstants.COLLECTION, {"user_email": email})
