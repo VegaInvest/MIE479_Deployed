@@ -15,7 +15,7 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import webbrowser
 
 # Initialize Flask app
-app = Flask(__name__)
+app = Flask(__name__, static_folder="frontend/build")
 app.config.from_pyfile("config.py")
 # app.config.from_object('config')
 app.secret_key = "123"

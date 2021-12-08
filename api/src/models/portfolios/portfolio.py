@@ -564,13 +564,7 @@ class Portfolio(object):
             for j in range(n):
                 y_sum += cvx.log(y[j]) # sum up logarithm of asset contribution as per risk-parity formulation 
 
-            obj = (
-                0.5 * cvx.quad_form(y, cov[tau]) -
-                y_sum + gamma_trans * sum(cvx.abs(y))
-
-                0.5 * cvx.quad_form(y, cov[tau]) - y_sum + gamma_trans * sum(cvx.abs(y)) # objective function with transaction costs 
-
-            )
+            obj = 0.5 * cvx.quad_form(y, cov[tau]) - y_sum + gamma_trans * sum(cvx.abs(y)) # objective function with transaction costs 
 
             constr += [wplus >= 0] # risk-parity constraint 
 
