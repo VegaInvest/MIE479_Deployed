@@ -54,7 +54,7 @@ const rtotal=(getMessage.lastportval/getMessage.amount_invested -1)*100 ;
   </thead>
   <tbody>
     <tr> 
-      <td> Amount Invested </td>
+      <td> Amount Invested $ </td>
       <td> {getMessage.amount_invested} </td> 
       </tr>
       <tr> 
