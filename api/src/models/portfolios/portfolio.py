@@ -531,7 +531,7 @@ class Portfolio(object):
 
             constr += [cvx.sum(wplus) == 1] # asset weightings add to 1
             constr += [wplus >= 0] # long only 
-            #constr += [wplus <= 1 / 3] # test weighting limit to promote greater cardinality 
+            constr += [wplus <= 1 / 3] # test weighting limit to promote greater cardinality 
             #constr += binary = cvx.Bool(n)
             #constr += [w - binary <= 0] # force binary values to be 1
             #constr += [cvx.sum_entries(binary) == k] # k can be any constant representing cardinality 
