@@ -48,10 +48,6 @@ def init_db_and_rawdata():
     atexit.register(lambda: scheduler.remove_job("job"))
 
 
-# Render home page
-@app.route("/")
-def home():
-    return send_from_directory(app.static_folder,'index.html')
 
 
 # Register views in Flask app
