@@ -69,4 +69,5 @@ app.register_blueprint(stock_blueprint, url_prefix="/stocks")
 
 
 if __name__ == "__main__":
+    print("yo")
     app.run()
