@@ -54,23 +54,23 @@ const rtotal=(getMessage.lastportval/getMessage.amount_invested -1)*100 ;
   </thead>
   <tbody>
     <tr> 
-      <td> Amount Invested $ </td>
+      <td> Amount Invested  </td>
       <td> {getMessage.amount_invested} </td> 
       </tr>
       <tr> 
-      <td> Total Return % </td>
-      <td>  {rtotal} </td> 
+      <td> Total Return  </td>
+      <td>  {Math.round(rtotal/100)*100} </td> 
       </tr>
     <tr>
-      <td> Annualized Return % </td>
+      <td> Annualized Return </td>
       <td> {getMessage.returns} </td>
     </tr>
     <tr>
-      <td> Annualized Volatility % </td>
+      <td> Annualized Volatility  </td>
       <td> {getMessage.vol} </td>
     </tr>
      <tr>
-      <td> Annualized Sharpe Ratio % </td>
+      <td> Annualized Sharpe Ratio  </td>
       <td> {getMessage.sharpe} </td>
     </tr>
   </tbody>
