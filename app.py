@@ -15,8 +15,6 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import webbrowser
 import os
 
-#worker file
-
 
 # Initialize Flask app
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
