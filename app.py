@@ -1,6 +1,7 @@
 from api.src.models.stocks.views import stock_blueprint
 from api.src.models.portfolios.views import portfolio_blueprint
 from api.src.models.users.views import user_blueprint
+from apscheduler.schedulers.blocking import BlockingScheduler
 from flask import Flask, render_template, send_from_directory, request, jsonify
 from api.src.common.database import Database
 from api.src.models.stocks.stock import Stock
@@ -27,6 +28,7 @@ api = Api(app)
 # Initialize Database before running any other command
 
 
+
 @app.before_first_request
 def init_db_and_rawdata():
     end_date = datetime.datetime.today()
@@ -36,17 +38,17 @@ def init_db_and_rawdata():
     if Portfolio.check_collection("rawdata") == False:
         Stock.push_rawData(PortfolioConstants.START_DATE, end_date)
 
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(
-        func=Stock.update_mongo_daily,
-        args=[start_date, end_date, StockConstants.TICKERS],
-        trigger="cron",
-        hour=4,
-        minute=54,
-        id="job",
-    )
-    scheduler.start()
-    atexit.register(lambda: scheduler.remove_job("job"))
+    # scheduler = BackgroundScheduler()
+    # scheduler.add_job(
+    #     func=Stock.update_mongo_daily,
+    #     args=[start_date, end_date, StockConstants.TICKERS],
+    #     trigger="cron",
+    #     hour=6,
+    #     minute=45,
+    #     id="job",
+    # )
+    # scheduler.start()
+    # atexit.register(lambda: scheduler.remove_job("job"))
 
 
 # Render home page
