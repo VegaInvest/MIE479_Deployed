@@ -34,7 +34,7 @@ useEffect(() => {
       console.log(response.data)
       setGetPostMessage(response.data)
     }).catch(error => {
-      console.log('yo')
+      console.log(error)
     })
   },[]);
   return(
