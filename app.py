@@ -14,6 +14,11 @@ import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 import webbrowser
 import os
+from rq import Queue
+from worker import conn
+
+#worker file
+
 
 # Initialize Flask app
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
