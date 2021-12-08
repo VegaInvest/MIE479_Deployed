@@ -50,7 +50,7 @@ def init_db_and_rawdata():
 # Render home page
 @app.route("/")
 def home():
-    return jsonify({"MSG": "Welcome to Backend"})
+    return send_from_directory(app.static_folder,'index.html')
 
 
 # @app.route("/yo", methods=["GET", "POST"])
