@@ -13,7 +13,8 @@ const ETF_table = () => {
         weights: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
     })
     useEffect(() => {
-      var fullurl='http://127.0.0.1:5000/portfolios/pushWeights/' + email;
+      const url = 'https://vegainvest.herokuapp.com/'
+      var fullurl= url +'portfolios/pushWeights/' + email;
       axios.get(fullurl).then(response => {
           console.log("SUCCESS")
           console.log(response.data);

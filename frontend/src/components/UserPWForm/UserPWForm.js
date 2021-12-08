@@ -53,7 +53,8 @@ useEffect(() => {
 
 const HandleRegister = () => {
     if (values.password==values.confirmpassword){
-    var fullurl='http://127.0.0.1:5000/users/register';
+    const url = 'https://vegainvest.herokuapp.com/'
+    var fullurl= url +'users/register';
     /*Attempts to post the password and email to the DB */
     axios.post(fullurl, values).then(response => {
         setGetPostMessage(response.data)

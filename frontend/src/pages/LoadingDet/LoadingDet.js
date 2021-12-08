@@ -28,7 +28,8 @@ useEffect(() => {
 }, [getPostMessage])
 
 useEffect(() => {
-  var fullurl='http://127.0.0.1:5000/portfolios/new';
+  const url = 'https://vegainvest.herokuapp.com/'
+  var fullurl=url + 'portfolios/new';
   axios.post(fullurl, pvalues).then(response => {
       console.log(response.data)
       setGetPostMessage(response.data)
