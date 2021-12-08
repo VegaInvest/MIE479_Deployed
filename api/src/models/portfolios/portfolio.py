@@ -380,7 +380,6 @@ class Portfolio(object):
         horizon = float(horizon)
         end = int(relativedelta(last_updated, start).years)
         if risk_appetite=='low':
-
             curr_weights = np.array([0.02055695, 0.03741558, 0.03050313, 0.02305751, 0.04041559,0.02952087, 0.03598701, 0.03286692, 0.04429862, 0.03860515,0.0263442 , 0.03980026, 0.03341805, 0.07352653, 0.03412987,0.05327761, 0.03938208, 0.07267048, 0.03225396, 0.06115003,0.04365678, 0.03829566, 0.05762529, 0.03051039, 0.03073148])
             ann_returns = 0.28391368002636286
             ann_vol = 0.20285503713415057
@@ -399,10 +398,10 @@ class Portfolio(object):
             # convert dates to string
             date_vector = []
             dates = outs[1][-2]
-            for date in dates:
-                ts = pd.to_datetime(str(date))
-                date = ts.strftime('%Y-%m-%d')
-                date_vector.append(date)
+        for date in dates:
+            ts = pd.to_datetime(str(date))
+            date = ts.strftime('%Y-%m-%d')
+            date_vector.append(date)
 
         port = Portfolio(
             email,
