@@ -397,8 +397,8 @@ class Portfolio(object):
             port_val = outs[1][-1]
 
             # convert dates to string
-            date_vector = []
             dates = outs[1][-2]
+        date_vector = []
         for date in dates:
             ts = pd.to_datetime(str(date))
             date = ts.strftime('%Y-%m-%d')
