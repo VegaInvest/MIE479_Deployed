@@ -13,6 +13,7 @@ import datetime
 import atexit
 from apscheduler.schedulers.background import BackgroundScheduler
 import webbrowser
+import os
 
 # Initialize Flask app
 app = Flask(__name__, static_url_path='', static_folder='frontend/build')
@@ -53,15 +54,6 @@ def home():
     return send_from_directory(app.static_folder,'index.html')
 
 
-# @app.route("/yo", methods=["GET", "POST"])
-# def test():
-#     data = request.get_json()
-#     print(data)
-#     return '<p> yo </p>'
-
-
-# Import all views
-
 # Register views in Flask app
 app.register_blueprint(user_blueprint, url_prefix="/users")
 app.register_blueprint(portfolio_blueprint, url_prefix="/portfolios")
@@ -69,5 +61,6 @@ app.register_blueprint(stock_blueprint, url_prefix="/stocks")
 
 
 if __name__ == "__main__":
+    port = int(os.environ.get('PORT', 5000))
     print("yo")
-    app.run()
+    app.run(debug=True, port=port)
