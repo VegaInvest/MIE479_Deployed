@@ -1,0 +1,9 @@
+.footer {
+  height: 2%;
+  background-color: #0645ad;
+  color: #0645ad;
+  display: inline-block;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+}

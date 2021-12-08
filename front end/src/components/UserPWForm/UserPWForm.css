@@ -1,0 +1,64 @@
+input.form-field {
+  margin-bottom: 20px;
+  background: #eef1ef;
+  width: 70%;
+}
+.UserPWForm-container {
+  width: 600px;
+  margin-top: 150px;
+  background-color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  padding: 10px;
+}
+.UserPWFormHeader {
+  margin-bottom: 20px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  text-align: center;
+  color: #000000;
+}
+.form-field {
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 24px;
+  text-align: center;
+  color: #909da1;
+}
+
+div.form {
+  display: block;
+  text-align: center;
+}
+
+.UserPWBtn {
+  font-family: Montserrat;
+  color: #000000;
+  background-color: #eeeeee;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 29px;
+  text-align: center;
+  width: 50%;
+}
+.UserPWBtn:hover {
+  color: #eeeeee;
+  background-color: #000000;
+}
+
+.errMessage {
+  display: inline-block;
+  color: #000000;
+  font-weight: bold;
+}
