@@ -28,7 +28,7 @@ const Dashboard = () => {
       })
   }, [])
 /* computing the return */
-const rtotal=(getMessage.lastportval/getMessage.amount_invested -1)*100 ;
+const rtotal=((getMessage.lastportval/getMessage.amount_invested -1)*100) ;
   
 
   return(
@@ -59,7 +59,7 @@ const rtotal=(getMessage.lastportval/getMessage.amount_invested -1)*100 ;
       </tr>
       <tr> 
       <td> Total Return %  </td>
-      <td>  {Math.round(rtotal/100)*100} </td> 
+      <td>  {Math.round(rtotal*100)/100} </td> 
       </tr>
     <tr>
       <td> Annualized Return % </td>
