@@ -31,8 +31,6 @@ from sklearn.preprocessing import StandardScaler
 from scipy.stats.mstats import gmean
 from sklearn import metrics
 from scipy import stats
-from rq import Queue
-from worker import conn
 
 
 portfolio_blueprint = Blueprint("portfolios", __name__)
