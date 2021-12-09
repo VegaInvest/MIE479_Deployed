@@ -79,7 +79,7 @@ def timed_job():
         start=start,
         date_vector=date_vector
     )
-
+    port.save_to_mongo()
 
 
 sched.start()
