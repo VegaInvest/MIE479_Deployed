@@ -45,6 +45,7 @@ def scheduled_job():
 
 @sched.scheduled_job('interval', days=15,next_run_time=datetime.datetime.now())
 def timed_job():
+    Database.initialize()
     last_updated = PortfolioConstants.END_DATE
     if Database.find_one('portfolios',{"risk_appetite":"low", "last_updated" : last_updated})!=None:
         start = datetime.datetime(2018, 1, 2)
