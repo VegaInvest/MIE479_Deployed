@@ -35,8 +35,8 @@ def init_db_and_rawdata():
     start_date = end_date - datetime.timedelta(days=1)
     Database.initialize()
     # if raw data collection does not exist at all, push it
-    if Portfolio.check_collection("rawdata") == False:
-        Stock.push_rawData(PortfolioConstants.START_DATE, end_date)
+    # if Portfolio.check_collection("rawdata") == False:
+    #     Stock.push_rawData(PortfolioConstants.START_DATE, end_date)
 
     # scheduler = BackgroundScheduler()
     # scheduler.add_job(
