@@ -41,7 +41,7 @@ def scheduled_job():
     Database.initialize()
     if Portfolio.check_collection("rawdata") == False:
         Stock.push_rawData(PortfolioConstants.START_DATE, end_date)
-    Stock.update_mongo_daily(start_date, end_date, StockConstants.TICKERS)
+    Stock.update_mongo_daily(start_date, end_date, PortfolioConstants.TICKERS)
 
 @sched.scheduled_job('interval', days=15)
 def timed_job():
