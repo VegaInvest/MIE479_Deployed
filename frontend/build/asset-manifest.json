@@ -6,21 +6,21 @@
     "runtime-main.js": "/static/js/runtime-main.bba78ac3.js",
     "runtime-main.js.map": "/static/js/runtime-main.bba78ac3.js.map",
     "static/css/2.7da20df6.chunk.css": "/static/css/2.7da20df6.chunk.css",
-    "static/js/2.a24f5e08.chunk.js": "/static/js/2.a24f5e08.chunk.js",
-    "static/js/2.a24f5e08.chunk.js.map": "/static/js/2.a24f5e08.chunk.js.map",
+    "static/js/2.2260a3b6.chunk.js": "/static/js/2.2260a3b6.chunk.js",
+    "static/js/2.2260a3b6.chunk.js.map": "/static/js/2.2260a3b6.chunk.js.map",
     "static/js/3.23e41222.chunk.js": "/static/js/3.23e41222.chunk.js",
     "static/js/3.23e41222.chunk.js.map": "/static/js/3.23e41222.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.7da20df6.chunk.css.map": "/static/css/2.7da20df6.chunk.css.map",
     "static/css/main.50597b09.chunk.css.map": "/static/css/main.50597b09.chunk.css.map",
-    "static/js/2.a24f5e08.chunk.js.LICENSE.txt": "/static/js/2.a24f5e08.chunk.js.LICENSE.txt",
+    "static/js/2.2260a3b6.chunk.js.LICENSE.txt": "/static/js/2.2260a3b6.chunk.js.LICENSE.txt",
     "static/media/VegaInvestLogo.a73a1716.png": "/static/media/VegaInvestLogo.a73a1716.png",
     "static/media/VegaLogoCon.41a51d5c.jpeg": "/static/media/VegaLogoCon.41a51d5c.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.bba78ac3.js",
     "static/css/2.7da20df6.chunk.css",
-    "static/js/2.a24f5e08.chunk.js",
+    "static/js/2.2260a3b6.chunk.js",
     "static/css/main.50597b09.chunk.css",
     "static/js/main.9722a806.chunk.js"
   ]
