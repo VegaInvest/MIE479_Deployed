@@ -398,11 +398,11 @@ class Portfolio(object):
         else:
             outs = Portfolio.multi_period_backtesting(PortfolioConstants.TICKERS, forecast_window=4, lookback=7, estimation_model=linear_model.SGDRegressor(
                 random_state=42, max_iter=5000), alpha=.1, gamma_trans=.1, gamma_risk=100000, date=Portfolio.to_integer(start), end=end*12, risk_appetite=risk_appetite)
-            curr_weights = outs[0][-1]
+            curr_weights = outs[0][-1].tolist()
             ann_returns = outs[1][1]
             ann_vol = outs[1][2]
             sharpe = outs[1][3]
-            port_val = outs[1][-1]
+            port_val = outs[1][-1].tolist()
 
             # convert dates to string
             dates = outs[1][-2]
@@ -419,11 +419,11 @@ class Portfolio(object):
             amount_invest=amount_invest,
             goal=goal,
             horizon=horizon,
-            curr_weights=curr_weights.tolist(),
+            curr_weights=curr_weights,
             ann_returns=ann_returns,
             ann_vol=ann_vol,
             sharpe=sharpe,
-            port_val=port_val.tolist(),
+            port_val=port_val,
             last_updated=last_updated,
             start=start,
             date_vector=date_vector
