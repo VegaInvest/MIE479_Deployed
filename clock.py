@@ -33,9 +33,9 @@ import time
 from dateutil.relativedelta import relativedelta
 
 sched = BlockingScheduler()
-@sched.scheduled_job('cron', day_of_week='mon-fri', second = 1)
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=17)
 def scheduled_job():
-    print("blah 2")
+    print("background 2")
     #data maintenance
     end_date = datetime.datetime.today()
     start_date = end_date - datetime.timedelta(days=1)
@@ -44,12 +44,12 @@ def scheduled_job():
         Stock.push_rawData(PortfolioConstants.START_DATE, end_date)
     Stock.update_mongo_daily(start_date, end_date, PortfolioConstants.TICKERS)
 
-@sched.scheduled_job('interval', minutes=1,next_run_time=datetime.datetime.now())
+@sched.scheduled_job('interval', days=15,next_run_time=datetime.datetime.now())
 def timed_job():
-    print("blah 1")
+    print("background 1")
     Database.initialize()
     last_updated = PortfolioConstants.END_DATE
-    if Database.find_one('portfolios',{"risk_appetite":"low", "last_updated" : last_updated})!=None:
+    if Database.find_one('portfolios',{"risk_appetite":"low", "last_updated" : last_updated})==None:
         start = datetime.datetime(2018, 1, 2)
         end = int(relativedelta(last_updated, start).years)
         outs = Portfolio.multi_period_backtesting(PortfolioConstants.TICKERS, forecast_window=4, lookback=7, estimation_model=linear_model.SGDRegressor(
