@@ -69,7 +69,7 @@ def timed_job():
             date_vector.append(date)
 
         port = Portfolio(
-            email="sample@sample.com",
+            user_email="sample@sample.com",
             risk_appetite='low',
             amount_invest='',
             goal='',
