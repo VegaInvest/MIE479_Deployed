@@ -84,4 +84,5 @@ def timed_job():
             date_vector=date_vector
         )
         port.save_to_mongo()
+        print("Sucess")
 sched.start()
