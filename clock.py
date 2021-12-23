@@ -46,7 +46,7 @@ def scheduled_job():
 
 @sched.scheduled_job('cron', day=1)
 def timed_job():
-    print("Updating Portfolio Data")
+    print("Updating Min Risk Data")
     Database.initialize()
     last_updated = PortfolioConstants.END_DATE
     if Database.find_one('portfolios',{"risk_appetite":"low", "last_updated" : last_updated})==None:
