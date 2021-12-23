@@ -44,7 +44,7 @@ def scheduled_job():
         Stock.push_rawData(PortfolioConstants.START_DATE, end_date)
     Stock.update_mongo_daily(start_date, end_date, PortfolioConstants.TICKERS)
 
-@sched.scheduled_job('interval', days=15,next_run_time=datetime.datetime.now())
+@sched.scheduled_job('cron', day=1)
 def timed_job():
     print("background 1")
     Database.initialize()
