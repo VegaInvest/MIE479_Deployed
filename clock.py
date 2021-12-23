@@ -35,7 +35,7 @@ from dateutil.relativedelta import relativedelta
 sched = BlockingScheduler()
 @sched.scheduled_job('cron', day_of_week='mon-fri', hour=22)
 def scheduled_job():
-    print("background 2")
+    print("Updating Raw Data")
     #data maintenance
     end_date = datetime.datetime.today()
     start_date = end_date - datetime.timedelta(days=1)
@@ -46,7 +46,7 @@ def scheduled_job():
 
 @sched.scheduled_job('cron', day=1)
 def timed_job():
-    print("background 1")
+    print("Updating Portfolio Data")
     Database.initialize()
     last_updated = PortfolioConstants.END_DATE
     if Database.find_one('portfolios',{"risk_appetite":"low", "last_updated" : last_updated})==None:
