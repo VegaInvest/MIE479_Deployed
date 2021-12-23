@@ -33,7 +33,7 @@ import time
 from dateutil.relativedelta import relativedelta
 
 sched = BlockingScheduler()
-@sched.scheduled_job('cron', day_of_week='mon-fri', hour=10)
+@sched.scheduled_job('cron', day_of_week='mon-fri', hour=22)
 def scheduled_job():
     print("background 2")
     #data maintenance
